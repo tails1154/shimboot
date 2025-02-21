@@ -28,6 +28,8 @@ jobs:
       - name: download
         run: |
               git init
+              git config rebase true
+              git pull
               echo "Downloading ${{ matrix.board }} shim image" > status.txt
               git add .
               git config user.name "Timothy Heironimus"
