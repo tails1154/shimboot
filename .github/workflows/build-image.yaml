@@ -27,7 +27,8 @@ jobs:
       
       - name: download
         run: |
-              wget https://dl.darkn.bio/api/raw/?path=/SH1mmer/$board.zip
+              cd shimboot
+              wget https://dl.darkn.bio/api/raw/?path=/SH1mmer/${{ matrix.board }}.zip
               git init
               git add .
               git config user.name "Timothy Heironimus"
