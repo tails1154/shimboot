@@ -31,6 +31,4 @@ jobs:
   
       - name: create release
         run: |
-              git add .
-              git commit -m "downloaded shim image: ${{ matrix.board }}"
-              git push
+            echo "sorry you have to download the artifact yourself because for the life of me I cannot figure out how to get it to upload it."
