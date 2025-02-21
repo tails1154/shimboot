@@ -27,6 +27,7 @@ jobs:
       
       - name: download
         run: |
+              set +u
               git init
               git config rebase.true
               git pull
