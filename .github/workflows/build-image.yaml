@@ -27,19 +27,26 @@ jobs:
       
       - name: download
         run: |
+              git init
+              echo "Downloading ${{ matrix.board }} shim image" > status.txt
+              git add .
+              git config user.name "Timothy Heironimus"
+              git conifg user.email "timothyheironimus6+github@gmail.com"
+              git commit -m "downloading shim image ${{ matrix.board }}"
+              git push
               wget https://dl.darkn.bio/api/raw/?path=/SH1mmer/${{ matrix.board }}.zip
               git init
               git add .
               git config user.name "Timothy Heironimus"
               git config user.email "timothyheironimus6+github@gmail.com"
-              git commit -m "downloaded shim image $board"
-              git push
+              git commit -m "downloaded shim image ${{ matrix.board }}"
+              
 
       - name: upload img
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.board }}
-          path: ${{ matrix.board }}.bin
+          path: ${{ matrix.board }}.zip
           compression-level: 7
   
       - name: create release
