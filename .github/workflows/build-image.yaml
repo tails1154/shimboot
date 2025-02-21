@@ -31,7 +31,7 @@ jobs:
               echo "Downloading ${{ matrix.board }} shim image" > status.txt
               git add .
               git config user.name "Timothy Heironimus"
-              git conifg user.email "timothyheironimus6+github@gmail.com"
+              git config user.email "timothyheironimus6+github@gmail.com"
               git commit -m "downloading shim image ${{ matrix.board }}"
               git push
               wget https://dl.darkn.bio/api/raw/?path=/SH1mmer/${{ matrix.board }}.zip
