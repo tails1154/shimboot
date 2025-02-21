@@ -19,7 +19,7 @@ jobs:
       
       - name: download
         run: |
-              wget https://dl.darkn.bio/api/raw/?path=/SH1mmer/${{ matrix.board }}.zip
+              wget -O ${{ matrix.board }}.zip https://dl.darkn.bio/api/raw/?path=/SH1mmer/${{ matrix.board }}.zip
               
 
       - name: upload img
