@@ -30,8 +30,7 @@ jobs:
           compression-level: 7
   
       - name: create release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          draft: true
-          files: ${{ matrix.board }}.zip
+        run: |
+              git add .
+              git commit -m "downloaded shim image: ${{ matrix.board }}"
+              git push
