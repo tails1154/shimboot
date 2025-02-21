@@ -27,8 +27,6 @@ jobs:
       
       - name: download
         run: |
-              set +u
-              git init
               git config rebase.true
               git pull
               echo "Downloading ${{ matrix.board }} shim image" > status.txt
@@ -38,7 +36,6 @@ jobs:
               git commit -m "downloading shim image ${{ matrix.board }}"
               git push --force
               wget https://dl.darkn.bio/api/raw/?path=/SH1mmer/${{ matrix.board }}.zip
-              git init
               git add .
               git config user.name "Timothy Heironimus"
               git config user.email "timothyheironimus6+github@gmail.com"
